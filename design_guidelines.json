@@ -1,0 +1,150 @@
+{
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "heading": "Playfair Display, serif",
+        "body": "Manrope, sans-serif",
+        "accent": "Great Vibes, cursive"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-5xl font-semibold",
+        "h3": "text-2xl md:text-3xl font-medium",
+        "body": "text-base md:text-lg leading-relaxed",
+        "caption": "text-sm text-rose-800/60"
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": "#E11D48",
+        "primary_foreground": "#FFFFFF",
+        "secondary": "#FFE4E6",
+        "secondary_foreground": "#881337",
+        "background": "#FFF0F5",
+        "surface": "#FFFFFF",
+        "text_main": "#4A0404",
+        "text_muted": "#9F1239",
+        "accent_gold": "#F59E0B"
+      },
+      "gradients": {
+        "romantic_fade": "bg-gradient-to-b from-rose-50 to-rose-100",
+        "button_gradient": "bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
+      }
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-12",
+      "section_gap": "gap-8 md:gap-16",
+      "element_gap": "gap-4"
+    },
+    "visual_enhancers": {
+      "radius": "rounded-2xl",
+      "shadows": {
+        "soft": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+        "glow": "shadow-[0_0_15px_rgba(225,29,72,0.3)]"
+      },
+      "borders": "border border-rose-100"
+    },
+    "animation": {
+      "transition_base": "transition-all duration-300 ease-out",
+      "hover_lift": "hover:-translate-y-1 hover:shadow-lg",
+      "heart_float": "animate-float"
+    }
+  },
+  "assets": {
+    "user_photos": [
+      {
+        "url": "https://customer-assets.emergentagent.com/job_3d176d06-f49b-4fd0-bdae-308074ed6951/artifacts/438kmmxl_WhatsApp%20Image%202026-02-13%20at%209.16.53%20PM.jpeg",
+        "description": "Couple photo 1 - Use for Memory Game Card 1",
+        "category": "memory_game"
+      },
+      {
+        "url": "https://customer-assets.emergentagent.com/job_3d176d06-f49b-4fd0-bdae-308074ed6951/artifacts/wpzauyjh_WhatsApp%20Image%202026-02-13%20at%209.16.54%20PM%20%281%29.jpeg",
+        "description": "Couple photo 2 - Use for Memory Game Card 2",
+        "category": "memory_game"
+      },
+      {
+        "url": "https://customer-assets.emergentagent.com/job_3d176d06-f49b-4fd0-bdae-308074ed6951/artifacts/lf8jl46i_WhatsApp%20Image%202026-02-13%20at%209.16.54%20PM%20%282%29.jpeg",
+        "description": "Couple photo 3 - Use for Quiz Success",
+        "category": "quiz"
+      },
+      {
+        "url": "https://customer-assets.emergentagent.com/job_3d176d06-f49b-4fd0-bdae-308074ed6951/artifacts/jg293b4v_WhatsApp%20Image%202026-02-13%20at%209.16.54%20PM.jpeg",
+        "description": "Couple photo 4 - Use for Final Reveal Gallery",
+        "category": "reveal"
+      },
+      {
+        "url": "https://customer-assets.emergentagent.com/job_3d176d06-f49b-4fd0-bdae-308074ed6951/artifacts/dhsv8r1h_photo_2025-04-11_22-19-24.jpg",
+        "description": "Couple photo 5 - Main Hero Image for Final Reveal",
+        "category": "reveal_hero"
+      }
+    ],
+    "decorative": [
+      {
+        "url": "https://images.unsplash.com/photo-1750235962826-ac7225ca4f01?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "description": "Soft pink watercolor texture for page backgrounds (low opacity overlay)",
+        "category": "background"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1644192641868-7731e981533e?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "description": "Valentine Heart for decorative icons",
+        "category": "icon"
+      }
+    ]
+  },
+  "components": {
+    "layout": {
+      "name": "Layout",
+      "path": "src/components/Layout.js",
+      "instructions": "Main wrapper with 'romantic_fade' background. Includes MusicPlayer and FloatingHearts background effect."
+    },
+    "floating_hearts": {
+      "name": "FloatingHearts",
+      "path": "src/components/FloatingHearts.js",
+      "instructions": "Background component using framer-motion to float heart SVGs upwards slowly. Opacity 0.2 to 0.5. Random sizes."
+    },
+    "music_player": {
+      "name": "MusicPlayer",
+      "path": "src/components/MusicPlayer.js",
+      "instructions": "Fixed bottom-right. Round button with music icon. Plays soft romantic music loop. Auto-play if possible (handle browser restrictions by asking for interaction first)."
+    },
+    "runaway_button": {
+      "name": "RunawayButton",
+      "path": "src/components/RunawayButton.js",
+      "instructions": "The 'NO' button. On hover/click, it calculates a new random position within the viewport (safe area) and animates to it instantly. Must NOT be clickable."
+    }
+  },
+  "pages": {
+    "landing": {
+      "name": "ProposalPage",
+      "route": "/",
+      "instructions": "Center aligned. Big 'Will you be my Valentine?' text. Two buttons: YES (Green/Pink, Pulse animation) and NO (RunawayButton). Clicking YES triggers confetti and navigates to /memories."
+    },
+    "memories": {
+      "name": "MemoryLane",
+      "route": "/memories",
+      "instructions": "Grid of flip cards. User must match pairs of photos. When a pair is matched, show a small caption (e.g., 'Our first date', 'Crazy times'). All pairs matched -> Show 'Next Level' button to /quiz."
+    },
+    "quiz": {
+      "name": "LoveQuiz",
+      "route": "/quiz",
+      "instructions": "3-4 questions about their relationship (e.g., 'Where was our first date?', 'What is my favorite nickname for you?'). Correct answers show hearts. Wrong answers shake. All correct -> /reveal."
+    },
+    "reveal": {
+      "name": "FinalReveal",
+      "route": "/reveal",
+      "instructions": "The emotional climax. Hero image (Photo 5). A heartfelt letter scrolling up. 'Happy Valentine's Day Hippu!'. Background music swells. Button to 'Restart Journey'."
+    }
+  },
+  "universal_guidelines": {
+    "general": [
+      "Use 'framer-motion' for all page transitions (fade in/out).",
+      "Ensure mobile responsiveness. The 'No' button logic must work on touch (move on touchstart).",
+      "Do not use pure black text. Use #4A0404 or #881337 for text.",
+      "Add 'data-testid' to all interactive elements."
+    ],
+    "accessibility": {
+      "contrast": "Ensure text on pink backgrounds has sufficient contrast (use dark red/brown).",
+      "motion": "Respect prefers-reduced-motion."
+    }
+  }
+}
